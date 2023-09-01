@@ -1,0 +1,85 @@
+﻿<Page x:Class="JF.Desktop.Views.Pages.LoginPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:JF.Desktop.Views.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      FontSize="24"
+      Title="LoginPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1"
+              Grid.RowSpan="2"
+              Grid.Column="1"
+              Grid.ColumnSpan="2"
+              Background="LightGray">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Авторизация"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontWeight="Bold"
+                   FontSize="36"/>
+
+            <Label Grid.Row="1"
+                   Content="Введите логин"
+                   HorizontalAlignment="Center"/>
+            <TextBox Grid.Row="2"
+                     x:Name="loginBox"
+                     Width="250"
+                     Height="35"/>
+
+            <Label Grid.Row="3"
+                   Content="Введите пароль"
+                   HorizontalAlignment="Center"/>
+            <PasswordBox Grid.Row="4"
+                         x:Name="passwordBox"
+                         Width="250"
+                         Height="35"/>
+            <Button Grid.Row="6"
+                    Content="Войти"
+                    Width="125"
+                    Height="35"
+                    FontWeight="Bold"
+                    Margin="0 0 130 0"
+                    x:Name="loginButton"
+                    Click="loginButton_Click"/>
+
+            <Button x:Name="regButton"
+                    Grid.Row="6"
+                    Content="Регистрация"
+                    Width="125"
+                    Margin="130 0 0 0"
+                    Height="35"
+                    Click="regButton_Click"/>
+
+
+        </Grid>
+
+    </Grid>
+</Page>

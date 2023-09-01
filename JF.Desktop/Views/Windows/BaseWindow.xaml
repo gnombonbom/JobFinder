@@ -1,0 +1,88 @@
+﻿<Window x:Class="JF.Desktop.Views.Windows.BaseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JF.Desktop.Views.Windows"
+        mc:Ignorable="d"
+        Title="BaseWindow" 
+        Height="768" 
+        Width="1024"
+        FontSize="24"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing"
+        WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Background="#000000"
+              MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition Width="40"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="minusButton"
+                    Grid.Column="1"
+                    Style="{StaticResource CloseButton}"
+                    Focusable="False"
+                    Click="minusButton_Click"
+                    BorderBrush="#000000">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Img/minus.png"
+                                Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+
+            <Button x:Name="closeButton"
+                    Grid.Column="2"
+                    Style="{StaticResource CloseButton}"
+                    Focusable="False"
+                    Click="closeButton_Click"
+                    BorderBrush="#000000">
+                <Button.Background>
+                    <ImageBrush ImageSource="../../Img/close.png"
+                                Stretch="Uniform"/>
+                </Button.Background>
+            </Button>
+            
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="mainButton"
+                    Style="{StaticResource navButton}"
+                    Content="Главная"
+                    Click="mainButton_Click"/>
+            <Button Grid.Column="1"
+                    x:Name="vacancyButton"
+                    Style="{StaticResource navButton}"
+                    Content="Вакансии"
+                    Click="vacancyButton_Click"/>
+            <Button Grid.Column="2"
+                    Style="{StaticResource navButton}"
+                    x:Name="resumeButton"
+                    Content="Резюме"
+                    Click="resumeButton_Click"/>
+            <Button Grid.Column="3"
+                    x:Name="loginButton"
+                    Style="{StaticResource navButton}"/>
+        </Grid>
+
+        <Frame Grid.Row="2"
+               x:Name="mainFrame" 
+               NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
